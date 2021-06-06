@@ -21,8 +21,9 @@ if type brew &>/dev/null; then
     done
   fi
 fi
-
-
+export BROWSER=brave
+export TERMINAL=alacritty
+export EDITOR=vim
 export PATH="/usr/local/sbin:$PATH"
 
 man() {

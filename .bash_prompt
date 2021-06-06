@@ -8,6 +8,8 @@ fi;
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
 fortune ~/quotes/quotes
+#echo "Do one thing, and do it well.
+#UNIX Philosophy"
 bind 'set completion-ignore-case on'
 complete -d cd
 shopt -s cdspell
@@ -45,11 +47,11 @@ fi;
 
 #minimilstic prompt view
 
-#PS1="\e[0;34m";
+#PS1="\[\e[0;34m\]";
 #PS1+="\w ";
-#PS1+="\e[0;00m";
+#PS1+="\[\e[0;00m\]";
 #PS1+="∳ ";
-#PS1+="\e[0m";
+#PS1+="\[${reset}\]";
 #export PS1;
 
 

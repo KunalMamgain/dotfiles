@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
 " Startup plugin
     Plug 'mhinz/vim-startify' 
 " Directory structure display
-    Plug 'preservim/nerdtree'
 call plug#end() 
  
 "General Settings
@@ -43,7 +42,7 @@ set laststatus=2 cmdheight=1
 set splitbelow splitright 
 set nobackup nowritebackup
 set nohlsearch
-set nowrap
+set wrap
 set incsearch
 set viminfo='100,n$HOME/.vim/files/info/viminfo
 
@@ -69,6 +68,9 @@ nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
 
+"gk and gk
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 "tab switching
 nnoremap H gT
 nnoremap L gt
@@ -138,10 +140,3 @@ let g:startify_lists = [
       \ { 'header': ['   MRU'],            'type': 'files' },
       \ { 'header': ['   MRU '. getcwd()], 'type': 'dir' },
       \ ]
-let g:startify_recursive_dir = 1
-" nerdtree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-    

@@ -3,8 +3,9 @@ alias f='ranger'
 
 alias t='tty-clock -c -s -C4'
 alias vim="vim -S ~/.vimrc"
-alias m="cd $HOME/Music/local_music &&  mpv naruto_lofi.webm"
-alias cs="$HOME/.scripts/cowsay.sh"
+alias mn="mpv ~/Music/local_music/naruto_lofi.webm"
+alias mm="mpv ~/Music/local_music/The\ Best\ of\ Mozart-Rb0UmrCXxVA.webm"
+alias cs="$HOME/.scripts/boring_scripts/cowsay.sh"
 
 alias weather='clear && curl wttr.in'
 alias fetch='clear && neofetch && fortune ~/quotes/quotes'
