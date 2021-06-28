@@ -1,0 +1,37 @@
+alias v='vim'
+alias f='env TERM=xterm-kitty ranger'
+
+alias vim="vim -S ~/.vimrc"
+alias s='v "$(fzf)"'
+alias t='tty-clock -c -s -C4'
+alias mn="mpv ~/Music/local_music/naruto_lofi.webm"
+alias mm="mpv ~/Music/local_music/The\ Best\ of\ Mozart-Rb0UmrCXxVA.webm"
+alias cs="$HOME/.scripts/boring_scripts/cowsay.sh|lolcat"
+
+alias weather='clear && curl wttr.in'
+alias fetch='clear && neofetch && fortune ~/quotes/quotes'
+
+alias reset='cd ~; clear; source ~/.bash_profile'
+
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume output volume 100'"
+
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+alias ph="set +o history"
+alias sh="set -o history"
+
+alias ytm="youtube-dl -f bestaudio "
+alias y='youtube-dl -o "%(channel)s_%(title)s-%(id)s.%(ext)s" ' 
+alias ys='youtube-dl -o "%(channel)s_%(title)s-%(id)s.%(ext)s" --embed-subs --write-sub '
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias brave="open -a brave\ browser"
