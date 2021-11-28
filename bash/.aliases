@@ -1,5 +1,8 @@
+#!/bin/bash
+
 alias v='vim'
 alias f='env TERM=xterm-kitty ranger'
+alias g="git"
 
 alias vim="vim -S ~/.vimrc"
 alias s='v "$(fzf)"'
@@ -35,3 +38,9 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 alias brave="open -a brave\ browser"
+alias bb="brew update;brew upgrade; brew cleanup; brew doctor"
+alias blog="cd ~/Desktop/website/kunalmamgain.github.io"
+
+alias ....='cd ../../..'
+alias ...='cd ../..'
+alias ..='cd ..'
