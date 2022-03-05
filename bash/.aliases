@@ -27,9 +27,9 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias ph="set +o history"
 alias sh="set -o history"
 
-alias ytm="youtube-dl -f bestaudio "
-alias y='youtube-dl -o "%(channel)s_%(title)s-%(id)s.%(ext)s" ' 
-alias ys='youtube-dl -o "%(channel)s_%(title)s-%(id)s.%(ext)s" --embed-subs --write-sub '
+alias ytm="yt-dlp -f bestaudio "
+alias y='yt-dlp -o "%(channel)s_%(title)s-%(id)s.%(ext)s" ' 
+alias ys='yt-dlp -o "%(channel)s_%(title)s-%(id)s.%(ext)s" --embed-subs --write-sub '
 
 alias ls='lsd'
 alias l='ls -l'

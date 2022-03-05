@@ -7,7 +7,7 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 fi;
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
-fortune ~/quotes/quotes
+#fortune ~/quotes/quotes
 #echo "Do one thing, and do it well.
 #UNIX Philosophy"
 bind 'set completion-ignore-case on'

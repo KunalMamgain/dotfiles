@@ -13,8 +13,6 @@ call plug#begin('~/.vim/plugged')
 " Color-schemes
     Plug 'morhetz/gruvbox' "My favorite theme
     Plug 'bluz71/vim-nightfly-guicolors'
-" COC
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
  "Rust plugins
     Plug 'rust-lang/rust.vim'
 " file searching
@@ -27,7 +25,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'mattn/emmet-vim'
 " md-preview
     Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
-
+"auto-complete brackets
+    Plug 'jiangmiao/auto-pairs'
+" Use release branch (recommend)
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"tagbar python
+    Plug 'majutsushi/tagbar'
 call plug#end() 
  
 "General Settings
@@ -50,12 +53,12 @@ set nohlsearch
 set nowrap
 set incsearch
 set viminfo='100,n$HOME/.vim/files/info/viminfo
-
+set mouse=a
 "Key-bindings
 let mapleader=" "
 nnoremap <leader><ENTER> :Goyo<CR>
 nnoremap <leader>, :vsplit ~/.vimrc<CR>
-nnoremap <leader>g :GitGutterDisable <BAR> :set laststatus=0 <CR>
+nnoremap <leader>g :GitGutterDisable<CR>
 nnoremap <C-l> :set background=light<CR>
 nnoremap <C-s> :source ~/.vimrc<CR>
 
@@ -79,10 +82,7 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 "tab switching
 nnoremap H gT
 nnoremap L gt
-"terminal opening settings
 
-nnoremap <leader>t :botright vertical terminal<CR>
-set termwinsize=100*35
 
 "Search and replace
 nnoremap S :%s//g<Left><Left>
@@ -152,3 +152,14 @@ let g:user_emmet_leader_key=','
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
+let g:AutoPairsFlyMode = 1
+
+" tags
+let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+
+
+map <leader>t :TagbarToggle<CR>
+
+
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
