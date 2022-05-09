@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "tagbar python
     Plug 'majutsushi/tagbar'
+    Plug 'mattn/emmet-vim'
 call plug#end() 
  
 "General Settings
