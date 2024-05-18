@@ -63,7 +63,8 @@ nnoremap <leader>g :GitGutterDisable<CR>
 nnoremap <C-l> :set background=light<CR>
 nnoremap <C-s> :source ~/.vimrc<CR>
 
-nnoremap <Up> :resize +2<CR> 
+
+nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
@@ -88,26 +89,14 @@ nnoremap L gt
 "Search and replace
 nnoremap S :%s//g<Left><Left>
 
-"Copy paste within vim 
-noremap <C-c> :w !pbcopy<CR><CR> 
+"Copy paste within vim
+noremap <C-c> :w !pbcopy<CR><CR>
 noremap <C-p> :r !pbpaste<CR><CR>
 
-"Color Settings
-colorscheme gruvbox
-set background=dark
-let g:airline_theme='gruvbox'
-let g:solarized_termcolors=256
-
 "limelight config
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-
+hi Normal guibg=NONE ctermbg=NONE
 "Make alacritty transparent in vim
 
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 "Goyo settings
 function! s:goyo_enter()
@@ -122,7 +111,7 @@ function! s:goyo_leave()
     hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
     set showmode
     set showcmd
-    Limelight! 
+    Limelight!
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -164,3 +153,12 @@ map <leader>t :TagbarToggle<CR>
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+hi Normal guibg=NONE ctermbg=NONE
+"Color Settings
+colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
+set background=dark
+let g:airline_theme='gruvbox'
+let g:solarized_termcolors=256
+
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
